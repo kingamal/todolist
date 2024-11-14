@@ -1,0 +1,12 @@
+.header {
+    background-color: #55163d;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin: 1rem;
+    font-size: 2rem;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+}
