@@ -1,11 +1,18 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Header from './components/Header/Header';
 import AddTodo from './components/AddTodo/AddTodo';
 import TodoList from './components/TodoList/TodoList';
 import './App.css';
 
 function App() {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(() => {
+    const savedTasks = localStorage.getItem('tasks');
+    return savedTasks ? JSON.parse(savedTasks) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+  }, [tasks]);
 
   const addTask = (taskText) => {
     const newTask = {
@@ -13,24 +20,24 @@ function App() {
       text: taskText,
       completed: false,
     };
-    setTasks([...tasks, newTask]);
+    setTasks((prevTasks) => [...prevTasks, newTask]);
   };
 
   const deleteTask = (taskId) => {
-    setTasks(tasks.filter((task) => task.id !== taskId));
+    setTasks((prevTasks) => prevTasks.filter((task) => task.id !== taskId));
   };
 
   const toggleTaskCompletion = (taskId) => {
-    setTasks(
-      tasks.map((task) =>
+    setTasks((prevTasks) =>
+      prevTasks.map((task) =>
         task.id === taskId ? { ...task, completed: !task.completed } : task
       )
     );
   };
 
   const editTask = (taskId, newText) => {
-    setTasks(
-      tasks.map((task) =>
+    setTasks((prevTasks) =>
+      prevTasks.map((task) =>
         task.id === taskId ? { ...task, text: newText } : task
       )
     );
