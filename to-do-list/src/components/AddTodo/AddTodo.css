@@ -8,8 +8,14 @@
     flex: 1;
     padding: 0.5rem;
     font-size: 1rem;
-    border: 1px solid #55163d;
+    border: 1px solid #ddd;
     border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+.add-todo-input:focus {
+    border-color: #55163d;
+    outline: none;
 }
 
 .add-todo-button {
@@ -19,9 +25,10 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-weight: bold;
     transition: background-color 0.3s;
 }
 
 .add-todo-button:hover {
-    background-color: #45a049;
+    background-color: #771b5a;
 }

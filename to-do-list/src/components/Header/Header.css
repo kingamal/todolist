@@ -2,11 +2,14 @@
     background-color: #55163d;
     color: white;
     text-align: center;
-    padding: 1rem;
-    margin: 1rem;
+    padding: 1.5rem;
     font-size: 2rem;
+    font-weight: bold;
     width: 100vw;
     position: relative;
     left: 50%;
+    margin: 1rem;
     margin-left: -50vw;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-bottom: 2px solid #440d31;
 }

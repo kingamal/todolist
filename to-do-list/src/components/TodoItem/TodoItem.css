@@ -2,15 +2,16 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.5rem;
+    padding: 0.75rem 1rem;
     border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-    transition: background-color 0.3s;
+    border-radius: 6px;
+    background-color: #fff;
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 .todo-item:hover {
-    background-color: #f1f1f1;
+    background-color: #f3f3f3;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .task-text {
@@ -28,23 +29,32 @@
     margin-right: 0.5rem;
     padding: 0.3rem;
     font-size: 1rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+/* Container for buttons */
+.button-container {
+    display: flex;
+    gap: 0.5rem;
+    /* Space between buttons */
 }
 
 .edit-button,
 .save-button,
 .delete-button {
-    background-color: #3498db;
+    background-color: #55163d;
     color: white;
     border: none;
-    padding: 0.3rem 0.6rem;
-    border-radius: 3px;
+    padding: 0.3rem 0.7rem;
+    border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 .edit-button:hover,
 .save-button:hover {
-    background-color: #2980b9;
+    background-color: #771b5a;
 }
 
 .delete-button {

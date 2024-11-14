@@ -33,9 +33,11 @@ function TodoItem({ task, toggleTaskCompletion, deleteTask, editTask }) {
             onClick={() => toggleTaskCompletion(task.id)}
           >
             {task.text}
-          </span>
-          <button className="edit-button" onClick={handleEdit}>Edit</button>
-          <button className="delete-button" onClick={() => deleteTask(task.id)}>Delete</button>
+             </span>
+             <div class="button-container">
+                <button className="edit-button" onClick={handleEdit}>Edit</button>
+                <button className="delete-button" onClick={() => deleteTask(task.id)}>Delete</button>
+             </div>
         </>
       )}
     </li>
